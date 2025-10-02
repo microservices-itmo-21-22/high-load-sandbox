@@ -38,6 +38,8 @@ class OrderPayer {
 
     fun processPayment(orderId: UUID, amount: Int, paymentId: UUID, deadline: Long): Long {
         val createdAt = System.currentTimeMillis()
+//        if (paymentExecutor.queue.size > )
+
         paymentExecutor.submit {
             val createdEvent = paymentESService.create {
                 it.create(
